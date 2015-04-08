@@ -77,8 +77,6 @@ Then, use these authentication codes :
 * Description
 * Place available
 
-Please note that the application has been translated in French in hardcoded way... Bad I know ! ^_^'
-
 ## Screenshots
 
 ### Public Overview
