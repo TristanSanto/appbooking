@@ -28,19 +28,19 @@
                         </div>
                     </div>     
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">Heure Début *</label>
+                        <label class="col-sm-3 control-label">Start Time *</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" ng-model="crenel.time_begin" bs-timepicker required>
                         </div>                                    
                     </div> 
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">Heure Fin *</label>
+                        <label class="col-sm-3 control-label">End Time *</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" ng-model="crenel.time_end" bs-timepicker required>
                         </div>                                    
                     </div>                                 
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">Lieu</label>
+                        <label class="col-sm-3 control-label">Location</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" ng-model="crenel.location">
                         </div>
@@ -53,10 +53,10 @@
                 <section ng-show="!isPostponed(crenel)">     
                     <h2>Participants</h2>                               
                     <div class="places form-group has-feedback">
-                        <label>Places disponibles *</label>
+                        <label>Available places *</label>
                         <input type="number" class="form-control" name="places" ng-model="crenel.places" required min="{{crenel_places_min}}" integer>                                 
-                        <span class="form-error" ng-show="form.places.$error.integer">Il faut saisir un nombre.</span>
-                        <span class="form-error" ng-show="form.places.$error.min">La valeur minimum est {{crenel_places_min}}.</span>                        
+                        <span class="form-error" ng-show="form.places.$error.integer">Please enter a number.</span>
+                        <span class="form-error" ng-show="form.places.$error.min">The minimum value is {{crenel_places_min}}.</span>                        
                     </div>                                
                     <ul class="list-group">
                         <li class="list-group-item" ng-repeat="subscription in subscriptions">
@@ -73,7 +73,7 @@
                                 <ul class="list-group">
                                     <li class="list-group-item">
                                         <div class="row">
-                                            <div class="col-xs-8">Accompagné d'un(e) conjoint(e)</div>
+                                            <div class="col-xs-8">With spouse</div>
                                             <div class="col-xs-4 bold">{{subscription.family.with_someone | YesOrNo}}</div>                                        
                                         </div>
                                     </li>
@@ -107,7 +107,7 @@
                     </ul>
                 </section>                          
                 <section class="form-section" ng-show="is_updating">                        
-                    <h2>Reporté <span ng-show="!isPostponed(crenel)">/ Annulé</span></h2>
+                    <h2>Reporté <span ng-show="!isPostponed(crenel)">/ Cancelled</span></h2>
                     <div class="padding-xxl">
                         <div class="form-group">
                             <select class="form-control" ng-model="crenel.status">
@@ -115,25 +115,25 @@
                                 <option value="2">Postpone</option>
                                 <option value="3" ng-show="!isPostponed(crenel)">Cancel</option>
                             </select>
-                            <span class="form-error" ng-show="checkPostponed(crenel)">Merci de changer la date et l'heure et d'ajouter un motif.</span> 
+                            <span class="form-error" ng-show="checkPostponed(crenel)">Please change the datetime and give a reason.</span> 
                         </div>                               
                         <div class="form-group">
-                            <label>Motif</label>
+                            <label>Reason</label>
                             <textarea class="form-control" rows="3" ng-model="crenel.reason"></textarea>    
-                            <span class="form-notice help-block">* Obligatoire</span>                               
+                            <span class="form-notice help-block">* Mandatory</span>                               
                         </div>                                              
                     </div>
                 </section>   
             </div>
             <div class="modal-footer">    
                 <div class="float-left" ng-show="is_updating">
-                    <button class="btn btn-primary" ng-show="!isPostponed(crenel) && !isCancelled(crenel)" ng-click="duplicateCrenel(crenel)">DUPLIQUER</button>                        
-                    <button class="btn btn-danger" ng-click="deleteCrenel(crenel)">EFFACER</button>                            
-                    <a class="btn btn-warning" href="/admin_crenel/export/{{crenel.id}}">EXPORTER</a>    
+                    <button class="btn btn-primary" ng-show="!isPostponed(crenel) && !isCancelled(crenel)" ng-click="duplicateCrenel(crenel)">COPY</button>                        
+                    <button class="btn btn-danger" ng-click="deleteCrenel(crenel)">CLEAR</button>                            
+                    <a class="btn btn-warning" href="/admin_crenel/export/{{crenel.id}}">EXPORT</a>    
                 </div>
                 <div class="float-right">
-                    <button type="button" class="btn btn-default" ng-click="$hide()">FERMER</button>                    
-                    <button class="btn btn-success" ng-click="submitCrenel()" ng-disabled="form.$invalid || checkPostponed(crenel)">SOUMETTRE</button>    
+                    <button type="button" class="btn btn-default" ng-click="$hide()">CLOSE</button>                    
+                    <button class="btn btn-success" ng-click="submitCrenel()" ng-disabled="form.$invalid || checkPostponed(crenel)">SUBMIT</button>    
                 </div>
             </div>
         </div>
