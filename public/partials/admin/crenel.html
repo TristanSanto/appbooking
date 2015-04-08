@@ -7,7 +7,7 @@
         <h1>{{month.date | date:'MMMM yyyy'}}</h1>
     </header>
     <div class="admin-month" ng-show="!month.previous_month">
-        <button type="button" class="btn btn-default" ng-click="createCrenel(month.date)">NOUVEAU CRENEAU</button>
+        <button type="button" class="btn btn-default" ng-click="createCrenel(month.date)">NEW CRENEL</button>
     </div>
     <div class="container">
         <div class="row">
@@ -16,7 +16,7 @@
                 <header ng-class="{'today': day.date === now()}">
                     <h2>{{day.date | date:"EEEE dd"}}</h2>
                     <div class="admin-day btn-group btn-group-sm" ng-show="!month.previous_month">
-                        <button type="button" class="btn btn-default" ng-click="createCrenel(day.date)">NOUVEAU CRENEAU</button>
+                        <button type="button" class="btn btn-default" ng-click="createCrenel(day.date)">NEW CRENEL</button>
                     </div>
                 </header>
                 <section ng-repeat="crenel in day.crenels">
@@ -31,7 +31,7 @@
                         <span data-toggle="tooltip">{{crenel.places_subscribed}}</span>
                     </div>
                     <footer>
-                        <a class="more" ng-click="updateCrenel(crenel)">MODIFIER</a>
+                        <a class="more" ng-click="updateCrenel(crenel)">EDIT</a>
                     </footer>
                 </section>
             </div>
