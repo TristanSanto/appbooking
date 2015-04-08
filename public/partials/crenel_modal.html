@@ -8,8 +8,8 @@
             <div class="modal-body">         
                 <h2>{{'PRACTICAL_INFORMATION' | translate}}</h2>              
                 <ul class="list-group">                    
-                    <li class="list-group-item postpone" ng-show="isCancelled(crenel)"><strong>Annulé</strong> : {{crenel.reason}}</li>                      
-                    <li class="list-group-item postpone" ng-show="isPostponed(crenel)"><strong>Reporté</strong> : {{crenel.reason}}</li> 
+                    <li class="list-group-item postpone" ng-show="isCancelled(crenel)"><strong>Cancelled</strong> : {{crenel.reason}}</li>                      
+                    <li class="list-group-item postpone" ng-show="isPostponed(crenel)"><strong>Postponed</strong> : {{crenel.reason}}</li> 
                     <li class="list-group-item"><label>Date</label> {{crenel.date| date:'fullDate'}}</li>
                     <li class="list-group-item"><label>{{'TIMESLOT' | translate}}</label> {{crenel.time_begin| limitTo:5}} - {{crenel.time_end| limitTo:5}}</li>                                
                     <li class="list-group-item"><label>{{'LOCATION' | translate}}</label> {{crenel.location}}</li>                                                                   
@@ -22,8 +22,8 @@
 
                 <section ng-show="isActive(crenel)">             
                     <h2>Participants</h2>
-                    <p ng-show="isBookable(crenel)">Il reste {{crenel.places - crenel.places_subscribed}} places libres pour un total de {{crenel.places}} places.</p>                         
-                    <p ng-show="!isBookable(crenel)">Les {{crenel.places}} places disponibles sont toutes réservées.</p>  
+                    <p ng-show="isBookable(crenel)">There are {{crenel.places - crenel.places_subscribed}} places left for {{crenel.places}} places available.</p> 
+                    <p ng-show="!isBookable(crenel)">All {{crenel.places}} places are booked.</p>  
                     <ul class="list-group">
                         <li class="list-group-item" ng-repeat="subscription in subscriptions">
                             <span class="glyphicon glyphicon-user"></span> 
@@ -34,42 +34,42 @@
                 </section>
 
                 <section ng-show="isActive(crenel) && isBookable(crenel)">
-                    <h2>Je m'inscris à cet événement</h2>
+                    <h2>I subscribe this event</h2>
                     <form name="form_signup" role="form" novalidate>
                         <div class="form-group">
-                            <label>Nom *</label>
+                            <label>Lastname *</label>
                             <input type="text" class="form-control" ng-model="user_signup.lastname" required date>
                         </div>                                   
                         <div class="form-group">
-                            <label>Prénom *</label>
+                            <label>Firstname *</label>
                             <input type="text" class="form-control" ng-model="user_signup.firstname" required>
                         </div>                                     
                         <div class="form-group">
-                            <label>Adresse mél *</label>
+                            <label>Email *</label>
                             <input type="email" class="form-control" name="signup_email" ng-model="user_signup.email" required>
-                            <span class="form-error" ng-show="form_signup.signup_email.$error.email">Cette adresse mél n'est pas valide.</span>
+                            <span class="form-error" ng-show="form_signup.signup_email.$error.email">This email is incorrect.</span>
                         </div>
 
                         <div class="panel panel-default" ng-show="isFamilyEvent(crenel)">      
                             <div class="panel-heading">
-                                <h4>Informations complémentaires</h4>
+                                <h4>Additional Information</h4>
                             </div>
                             <div class="panel-body">
                                 <div class="checkbox checkbox-padding">
                                     <label>
-                                        <input type="checkbox" ng-model="user_signup.family.with_someone"> Je viens avec un(e) conjoint(e)
+                                        <input type="checkbox" ng-model="user_signup.family.with_someone"> I come with my spouse
                                     </label>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-7">
                                         <div class="input-group">
-                                            <span class="input-group-addon">Enfant 1 Prénom</span>
+                                            <span class="input-group-addon">Child 1 Firstname</span>
                                             <input type="text" class="form-control" ng-model="user_signup.family.child_firstname1">
                                         </div>
                                     </div>
                                     <div class="col-sm-5">
                                         <div class="input-group">
-                                            <span class="input-group-addon">Anniversaire</span>
+                                            <span class="input-group-addon">Birthday</span>
                                             <input type="text" class="form-control" ng-model="user_signup.family.child_birthday1" bs-datepicker>
                                         </div>
                                     </div>
@@ -77,13 +77,13 @@
                                 <div class="row">
                                     <div class="col-sm-7">
                                         <div class="input-group">
-                                            <span class="input-group-addon">Enfant 2 Prénom</span>
+                                            <span class="input-group-addon">Child 2 Firstname</span>
                                             <input type="text" class="form-control" ng-model="user_signup.family.child_firstname2">
                                         </div>
                                     </div>
                                     <div class="col-sm-5">
                                         <div class="input-group">
-                                            <span class="input-group-addon">Anniversaire</span>
+                                            <span class="input-group-addon">Birthday</span>
                                             <input type="text" class="form-control" ng-model="user_signup.family.child_birthday2" bs-datepicker>
                                         </div>
                                     </div>
@@ -91,13 +91,13 @@
                                 <div class="row">
                                     <div class="col-sm-7">
                                         <div class="input-group">
-                                            <span class="input-group-addon">Enfant 3 Prénom</span>
+                                            <span class="input-group-addon">Child 3 Firstname</span>
                                             <input type="text" class="form-control" ng-model="user_signup.family.child_firstname3">
                                         </div>
                                     </div>
                                     <div class="col-sm-5">
                                         <div class="input-group">
-                                            <span class="input-group-addon">Anniversaire</span>
+                                            <span class="input-group-addon">Birthday</span>
                                             <input type="text" class="form-control" ng-model="user_signup.family.child_birthday3" bs-datepicker>
                                         </div>
                                     </div>
@@ -105,13 +105,13 @@
                                 <div class="row">
                                     <div class="col-sm-7">
                                         <div class="input-group">
-                                            <span class="input-group-addon">Enfant 4 Prénom</span>
+                                            <span class="input-group-addon">Child 4 Firstname</span>
                                             <input type="text" class="form-control" ng-model="user_signup.family.child_firstname4">
                                         </div>
                                     </div>
                                     <div class="col-sm-5">
                                         <div class="input-group">
-                                            <span class="input-group-addon">Anniversaire</span>
+                                            <span class="input-group-addon">Birthday</span>
                                             <input type="text" class="form-control" ng-model="user_signup.family.child_birthday4" bs-datepicker>
                                         </div>
                                     </div>
@@ -119,30 +119,30 @@
                             </div>                          
                         </div>
 
-                        <button class="btn btn-success" ng-disabled="form_signup.$invalid" ng-click="signup()">S'INSCRIRE</button>
-                        <span class="form-notice help-block">* Obligatoire</span>
+                        <button class="btn btn-success" ng-disabled="form_signup.$invalid" ng-click="signup()">SUBSCRIBE</button>
+                        <span class="form-notice help-block">* Mandatory</span>
                     </form>                    
                 </section>
 
                 <section ng-show="isActive(crenel)">
-                    <h2>Je me désinscris de cet événement</h2>
+                    <h2>I unsubscribe this event</h2>
                     <form name="form_withdraw" role="form" novalidate>
                         <div class="form-group">
-                            <label>Adresse mél *</label>
+                            <label>Email *</label>
                             <input type="email" class="form-control" name="withdraw_email" ng-model="user_withdraw.email" required>
-                            <span class="form-error" ng-show="form_withdraw.withdraw_email.$error.email">Cette adresse mél n'est pas valide.</span>
+                            <span class="form-error" ng-show="form_withdraw.withdraw_email.$error.email">This email is incorrect.</span>
                         </div>                               
                         <div class="form-group">
-                            <label>Motif</label>
+                            <label>Reason</label>
                             <textarea class="form-control" rows="3" ng-model="user_withdraw.reason"></textarea>
                         </div>                           
-                        <button class="btn btn-warning" ng-disabled="form_withdraw.$invalid" ng-click="withdraw()">SE DESISTER</button>                         
-                        <span class="form-notice help-block">* Obligatoire</span>                                
+                        <button class="btn btn-warning" ng-disabled="form_withdraw.$invalid" ng-click="withdraw()">UNSUBSCRIBE</button>                         
+                        <span class="form-notice help-block">* Mandatory</span>                                
                     </form>                     
                 </section>                                    
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" ng-click="$hide()">FERMER</button>
+                <button type="button" class="btn btn-default" ng-click="$hide()">CLOSE</button>
             </div>
         </div>
     </div>
