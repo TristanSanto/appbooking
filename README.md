@@ -17,7 +17,7 @@ This application depends on these API:
 * Restore the dump `appbooking.sql` that you'll find in the folder `/db`
 * Update the connection to the database in the file `/application/config/database.php`
 * Update the admin email address to receive notifications in the file `/application/config/config.php`
-* Update the URL to validate subscriptions in the file `/application/config/config.php`
+* Update the URL for validating subscriptions in the file `/application/config/config.php`
 * Create a VHost under Apache HTTP if you want
 
 Here is an example of VHost file :
