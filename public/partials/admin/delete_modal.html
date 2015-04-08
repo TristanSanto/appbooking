@@ -1,0 +1,23 @@
+<div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="$hide()">&times;</button>
+                <h1 class="modal-title">Delete the event {{crenel.name}}</h1>
+            </div>
+            <div class="modal-body">                
+                <h2>If needed, enter a comment for the participants</h2>
+                <form name="form_delete" role="form" novalidate>                       
+                    <div class="form-group">
+                        <label>Reason</label>
+                        <textarea class="form-control" rows="5" ng-model="crenel.reason" required></textarea>
+                    </div>                           
+                    <button class="btn btn-danger" ng-click="deleteDefinitelyCrenel()">Delete</button>                                                   
+                </form>                                 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" ng-click="$hide()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+#header a {
+    color: #888;
+}
+
+.admin-month {
+    width: 600px;
+    margin: 0 auto;
+    padding: 0 0 40px;
+    text-align: center;
+}
+.admin-day {
+    margin: 10px 0;
+    text-align: left;
+}
+
+.admin-crenel {
+    margin: 0 0 20px;
+    text-align: left;
+}
+
+.datepicker button,
+.timepicker button {
+    border: none;
+}
+
+.admin-subscription {
+    margin-right: 10px;
+    text-align: left;
+}
+
+.admin-access {
+    margin: 0 0 40px;
+}
+
+.options.previous {
+    background: #fff !important;
+}
+
+.options.previous .see {
+    background: #fff;
+    color: #000;
+}
+
+.options.previous .see:hover {
+    background: #000;
+    color: #fff;
+}

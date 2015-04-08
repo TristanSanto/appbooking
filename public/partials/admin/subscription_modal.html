@@ -1,0 +1,27 @@
+<div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="$hide()">&times;</button>
+                <h1 class="modal-title">Unsubscribe a participant</h1>
+            </div>
+            <div class="modal-body">                
+                <h2>Please, enter a comment for {{subscription.firstname}} {{subscription.lastname}}</h2>
+                <form name="form_unsubscribe" role="form" novalidate>                       
+                    <div class="alert alert-warning">
+                        Be careful, by unsubscribing the user yourself, he won't be able to subscribe himself again but you will do.                      
+                    </div>
+                    <div class="form-group">
+                        <label>Reason</label>
+                        <textarea class="form-control" rows="5" ng-model="subscription.reason" required></textarea>
+                    </div>                           
+                    <button class="btn btn-warning" ng-disabled="form_unsubscribe.$invalid" ng-click="unsubscribeDefinitelyParticipant()">Validate</button>                         
+                    <span class="form-notice help-block">* Required</span>                                
+                </form>                                 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" ng-click="$hide()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

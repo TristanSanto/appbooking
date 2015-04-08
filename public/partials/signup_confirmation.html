@@ -1,0 +1,27 @@
+<div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="$hide()">&times;</button>
+                <h1 class="modal-title">Validate your subscription</h1>
+            </div>
+            <div class="modal-body">           
+                <h2>{{crenel.name}}</h2>              
+                <ul class="list-group">                    
+                    <li class="list-group-item"><label>Date</label> {{crenel.date | date:'fullDate'}}</li>
+                    <li class="list-group-item"><label>Time slot</label> {{crenel.time_begin | limitTo:5}} - {{crenel.time_end | limitTo:5}}</li>                                
+                    <li class="list-group-item"><label>Location</label> {{crenel.location}}</li>                                                                   
+                </ul>   
+                <h2>Next step</h2>                
+                <p>
+                    Your demand of signup has been registered successfully.<br>
+                    You will receive an email to validate your subscription definitely.<br>
+                    Do validate your subscription as quick as possible in order to book your place.
+                </p>                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" ng-click="$hide()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<section class="month-container christmas" ng-repeat="month in months">     
+    <header class="center">
+        <h1>{{month.date| date:'MMMM yyyy'}}</h1>         
+    </header>       
+    <div class="container">                                       
+        <div class="row">     
+            <div class="alert center" role="alert" ng-show="!month.days.length">{{'NO_SCHEDULED_EVENT'| translate}}</div>
+            <div ng-repeat="day in month.days" class="day-container col-md-2">
+                <header ng-class="{'today': day.date === now()}">
+                    <h2>{{day.date| date:"EEEE dd"}}</h2>                                        
+                </header>
+                <section ng-repeat="crenel in day.crenels">
+                    <header>
+                        <h2>{{crenel.name}}</h2>   
+                        <h3>{{crenel.time_begin| limitTo:5}} - {{crenel.time_end| limitTo:5}}</h3>  
+                        <h4>{{crenel.location}}</h4>
+                    </header>                                        
+                    <div ng-show="isBookable(crenel)" ng-class="getEventColor(crenel)" data-title="{{crenel.places - crenel.places_subscribed}} {{'PLACES_LEFT' | translate}}" data-placement="left" bs-tooltip>
+                        <span data-toggle="tooltip">{{crenel.places_subscribed}}</span>
+                    </div>
+                    <div ng-show="!isBookable(crenel)" class="place full">
+                        <span>{{'FULL' | translate}}</span>
+                    </div>                    
+                    <footer>
+                        <a class="more" ng-show="!isBookable(crenel)" ng-click="showDetail(crenel)">{{'VIEW' | translate}}</a>     
+                        <a class="more" ng-show="isActive(crenel) && isBookable(crenel)" ng-click="showDetail(crenel)">{{'ATTEND' | translate}}</a>     
+                        <a class="more postpone" ng-show="isPostponed(crenel)" ng-click="showDetail(crenel)">{{'POSTPONED' | translate}}</a>          
+                        <a class="more postpone" ng-show="isCancelled(crenel)" ng-click="showDetail(crenel)">{{'CANCELLED' | translate}}</a>
+                    </footer>                                       
+                </section>                                    
+            </div>                     
+        </div>
+    </div>    
+</section> 
+
+<div class="options center" ng-show="has_more">       
+    <a class="see" ng-click="fetchMore()">{{'NEXT_MONTH' | translate}}</a>  
+</div>

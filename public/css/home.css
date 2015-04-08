@@ -1,0 +1,220 @@
+.parallax-window {
+    min-height: 1980px;
+    background: transparent;
+}
+
+.christmas {
+    background: url(/images/001.jpg) fixed !important;
+    background-repeat: no-repeat;
+} 
+
+.christmas h1 {
+    color: #fff !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,.5);
+}
+
+.christmas .alert {
+    font-size: 28px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.3);
+}
+
+
+h1 {
+    margin: 0;
+    padding: 10px;
+}
+
+a {
+    color: #888;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+#header {
+    padding: 10px;
+    background: #fff;
+    color: #888;
+}
+
+#footer {
+    padding: 40px;
+    text-align: center;
+    background: #000;
+    color: #888;
+}
+
+.options {
+    padding: 60px;
+    background: #000;
+}
+
+.see {
+    display: inline-block;
+    border: solid 1px #555;
+    border-radius: 0;
+    padding: 20px;
+    margin: 20px;
+    background: #000;
+    color: #fff;
+}
+
+.see:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* month */
+.month-container {
+    padding: 0;
+    padding-bottom: 30px;
+}
+
+.month-container:nth-child(even) {
+    background: #ccc;
+}
+
+.month-container:nth-child(even) .day-container > section:not(:last-child) {
+    border-bottom: solid 3px transparent;
+}
+
+.month-container:nth-child(even) .day-container > section:hover {
+    background: #fff;
+}
+
+.month-container > header > h1 {
+    font-size: 4.5em;
+    margin: 0;
+    padding: 70px 0;
+    text-align: center;
+    color: #888;
+}
+
+.month-container:nth-child(even) > header > h1 {
+    color: #666;
+}
+
+/* day */
+.day-container {
+    text-align: center;
+    padding: 0 5px;
+    margin-bottom: 20px;
+}
+
+.day-container:nth-child(8n) {
+    clear: both;
+}
+
+.day-container section {
+    background: #ddd;
+}
+
+.day-container:nth-child(odd) section {
+    background: #eee;
+}
+
+.day-container > header {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.day-container:nth-child(odd) > header {
+    background: #444;
+}
+
+.day-container > header h2 {
+    font-size: 1.2em;
+    padding: 10px;
+    margin: 0;
+}
+
+.day-container > section:not(:last-child) {
+    border-bottom: solid 3px #fff;
+}
+
+.day-container > section > header h2 {
+    font-size: 2em;
+    margin: 0;
+    padding: 15px 0;
+    overflow: hidden;
+}
+
+.day-container > section > header h3 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.day-container > section > header h4 {
+    font-size: 1em;
+}
+
+.day-container > section:hover {
+    background: #bbb;
+}
+
+.day-container .place {
+    font-size: 3em;
+    color:#fff;
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+    margin: 10px;
+    display: inline-block;
+    line-height: 1.8em;
+}
+
+.day-container .full {
+    font-size: 2em;
+    background: #000;
+    margin: 20px;
+    line-height: 2.8em;
+}
+
+.day-container .more {
+    display: inline-block;
+    font-size: 1.5em;
+    padding: 20px;
+    cursor: pointer;
+}
+
+/* Event color */
+
+.event-type-color {
+    font-size: 48px;
+    vertical-align: top;
+    margin: 0 20px 10px 10px;
+}
+
+.event-standard {
+    background: #888;
+}
+
+.event-standard-color {
+    color: #888;
+}
+
+.event-family {
+    background: #c00;
+}
+
+.event-family-color {
+    color: #c00;
+}
+
+.event-sport {
+    background: #f80;
+}
+
+.event-sport-color {
+    color: #f80;
+}
+
+.event-formation {
+    background: #08f;
+}
+
+.event-formation-color {
+    color: #08f;
+}

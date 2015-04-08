@@ -1,0 +1,60 @@
+html, body {
+    background: #eee;
+}
+
+#login {
+    width: 100%;
+    height: 80%;
+    display: table;    
+}
+
+.container {
+    display: table-cell;
+    vertical-align: middle;   
+}
+
+.container .inner {      
+    width: 480px;   
+    margin: auto;
+    padding: 30px;   
+    border: solid 1px #ccc;
+    border-radius: 10px;   
+    background: #fff; 
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.1);    
+}
+
+.container header {
+    text-align: center;
+}
+
+.container header h1 {
+    margin: 0;
+    padding: 0 0 30px;
+}
+
+.container form {
+    width: 90%;
+    margin: auto;
+}
+
+.container label {
+    color: #aaa;
+}
+
+.container input {
+    color: #000;
+}
+
+.container .button {
+    border: solid 1px #ccc;
+    border-radius: 5px;  
+    padding: 10px 30px;
+    margin: 10px 0 0;
+}
+
+.container footer {
+    font-size: 0.9em;
+    text-align: center;
+    padding: 20px;
+    color: #888;
+}
