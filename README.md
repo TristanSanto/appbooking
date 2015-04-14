@@ -33,12 +33,12 @@ NameVirtualHost *:80
 </VirtualHost>
 ```
 
-## To Log In as Admin
+## To Log In as an Admin User
 
 Suppose that you've accessed the application with the following url :
 http://appbooking.net
 
-To log in as admin, type the following url :
+To log in as an admin user, type the following url :
 http://appbooking.net/admin
 
 Then, use these authentication codes :
